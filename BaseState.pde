@@ -17,4 +17,6 @@ class BaseState {
   }
   void mousePressed() {
   }
+  void keyPressed() {
+  }
 }
