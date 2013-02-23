@@ -21,8 +21,8 @@ class BaseState {
   float write(String txt, PFont font, float y, color c) {
     textAlign(CENTER, TOP);
     textFont(font);
-    text(txt, width/2, y);
     fill(c);
+    text(txt, width/2, y);
     return y + textAscent() + textDescent();
   }
   void mousePressed() {
