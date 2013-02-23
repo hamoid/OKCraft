@@ -8,7 +8,6 @@ class StateGame extends BaseState implements State {
     // background initialization
     lines = loadStrings("muchtext.txt");
     f = loadFont("Candara-48.vlw");
-    textFont(f,20);
   }
 
   void draw() {
@@ -20,10 +19,10 @@ class StateGame extends BaseState implements State {
   void scroll_text(){
     fill(255,60);
     for (int i = 0 ; i < lines.length; i++) {
+      textFont(f, 20);
       text(lines[(i + scroll) % lines.length], 10, i * 10);
     }
     scroll += 1;
-    fill(255);
   }
   
   void mousePressed() {
