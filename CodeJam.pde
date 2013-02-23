@@ -31,7 +31,7 @@ void mousePressed() {
   state.mousePressed();
 }
 void nextState() {
-  currState++;
+  currState = currState + 1;
 
   switch(currState) {
     case STATE_WAIT:

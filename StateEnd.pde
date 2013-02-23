@@ -11,7 +11,7 @@ class StateEnd extends BaseState implements State {
       bottomY = write("You are free", F20, bottomY + 20, #FFFFFF);
     }
     if(currentTime() > 6) {
-      bottomY = write("You are dead", F20, bottomY + 20, #FFFFFF);
+      bottomY = write("You are so dead", F20, bottomY + 20, #FFFFFF);
     }    
   }
   void mousePressed() {
