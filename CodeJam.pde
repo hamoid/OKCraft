@@ -22,6 +22,7 @@ void setup() {
 }
 void draw() {
   background(0);  
+
   state.draw();
   if (state.done()) {
     nextState();
@@ -30,6 +31,11 @@ void draw() {
 void mousePressed() {
   state.mousePressed();
 }
+
+void keyPressed(){
+  state.keyPressed();
+}
+
 void nextState() {
   currState = currState + 1;
 

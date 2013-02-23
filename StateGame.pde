@@ -2,15 +2,24 @@ class StateGame extends BaseState implements State {
 
   String [] lines;
   PFont f;
+  Lives lives;
   int scroll = 0;
 
   public StateGame(){
-    // background initialization
+    // init lives
+    lives = new Lives();
+    // init background
     lines = loadStrings("muchtext.txt");
   }
 
   void draw() {
     super.draw();
+
+    lives.draw();
+    if (lives.isDead()){
+        done = true;
+    }
+
     scroll_text();
     text("you are now playing", 30, 30);
   }
@@ -27,5 +36,9 @@ class StateGame extends BaseState implements State {
   void mousePressed() {
     println("mouse pressed game");
     done = true;
+  }
+
+  void keyPressed(){
+    lives.click_ok();
   }
 }
