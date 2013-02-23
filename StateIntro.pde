@@ -2,7 +2,7 @@ class StateIntro extends BaseState implements State {
   void draw() {
     super.draw();
 
-    text("This is the intro", 30, 30);
+    write("Instructions...", F20, height/2, #FFFFFF);
   }
   void mousePressed() {
     println("mouse pressed intro");

@@ -7,8 +7,17 @@ int currState = STATE_WAIT;
 
 State state;
 
+PFont F10;
+PFont F20;
+PFont F48;
+PFont F100;
+
 void setup() {
   size(800, 600);
+  F10 = loadFont("Candara-10.vlw");
+  F20 = loadFont("Candara-20.vlw");
+  F48 = loadFont("Candara-48.vlw");
+  F100 = loadFont("Candara-100.vlw");
   state = new StateWait();
 }
 void draw() {
