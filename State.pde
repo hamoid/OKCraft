@@ -3,4 +3,6 @@ interface State {
   void mousePressed();
   void keyPressed();
   boolean done();
+  //void midiButton();
+  //void controllerIn(int device, int channel);
 }

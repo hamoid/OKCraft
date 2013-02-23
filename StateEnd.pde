@@ -1,5 +1,18 @@
 class StateEnd extends BaseState implements State {
+  int y = 0;
   void draw() {
+    if(random(100) > 98) {
+      fill(44);
+      rect(0, 0, width, height);
+    }
+    fill(random(100), 0, 0);
+    noStroke();
+    rect(0, y, width, 40);
+    y = y - int(random(20));
+    if(y < 0) {
+      y = height;
+    }
+    
     super.draw();
 
     float bottomY = write("GAME OVRE", F100, height/2 - 50, #FFFFFF);
@@ -15,7 +28,8 @@ class StateEnd extends BaseState implements State {
     }    
   }
   void mousePressed() {
-    println("mouse pressed end");
-    done = true;
+    if(currentTime() > 4) {
+      done = true;
+    }
   }
 }

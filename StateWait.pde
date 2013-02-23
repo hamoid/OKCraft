@@ -1,5 +1,12 @@
 class StateWait extends BaseState implements State {  
   void draw() {
+    noFill();
+    stroke(random(100), 0, 0);
+    strokeWeight(30);
+    float sz = random(width);
+    ellipse(width/2, height/2, sz, sz);
+    strokeWeight(1);
+
     super.draw();
     
     float bottomY = write("OkCraft", F100, height/2 - 50, #FFFFFF);
@@ -11,7 +18,7 @@ class StateWait extends BaseState implements State {
       bottomY = write("and aBe", F20, bottomY + 20, #FFFFFF);
     }
     
-    if(currentTime() > 6) {
+    if(currentTime() > 6 || FAST) {
       done = true;
     }
   }    

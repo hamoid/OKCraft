@@ -15,8 +15,8 @@ class BaseState {
     return done;
   }
   void draw() {
-    textFont(F10);
-    text("t: " + currentTime(), 20, height-20);    
+    //textFont(F10);
+    //text("t: " + currentTime(), 20, height-20);    
   }
   float write(String txt, PFont font, float y, color c) {
     textAlign(CENTER, TOP);
@@ -28,5 +28,9 @@ class BaseState {
   void mousePressed() {
   }
   void keyPressed() {
+  }
+  void midiButton(){
+  }
+  void controllerIn(int device, int channel){
   }
 }
