@@ -1,5 +1,3 @@
-import promidi.*;
-
 final int STATE_WAIT = 0;
 final int STATE_INTRO = 1;
 final int STATE_GAME = 2;
@@ -15,15 +13,8 @@ PFont F20;
 PFont F48;
 PFont F100;
 
-MidiIO midiIO;
-
 void setup() {
-  size(800, 600);
-  
-  midiIO = MidiIO.getInstance(this); 
-  midiIO.printDevices();  
-  midiIO.openInput(0,0);
-
+  size(800, 600);  
   F10 = loadFont("Candara-10.vlw");
   F20 = loadFont("Candara-20.vlw");
   F48 = loadFont("Candara-48.vlw");
@@ -45,15 +36,6 @@ void mousePressed() {
 void keyPressed(){
   state.keyPressed();
 }
-
-void noteOn(Note note, int device, int channel){
-  //state.midiButton();
-}
-
-void controllerIn(Controller controller, int device, int channel){
-  //state.midiCC(controller.getNumber(), controller.getValue());
-}
-
 
 void nextState() {
   currState = (currState + 1) % 4;

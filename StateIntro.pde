@@ -1,8 +1,6 @@
 class StateIntro extends BaseState implements State {
   void draw() {
-    fill(random(100), 0, 0);
-    noStroke();
-    rect(0, random(height), width, 40);
+    drawEffects();
     
     super.draw();
 
@@ -16,7 +14,11 @@ class StateIntro extends BaseState implements State {
     }
   }
   void mousePressed() {
-    println("mouse pressed intro");
     done = true;
+  }
+  void drawEffects() {
+    fill(random(100), 0, 0);
+    noStroke();
+    rect(0, random(height), width, 40);
   }
 }

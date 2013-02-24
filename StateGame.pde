@@ -2,17 +2,14 @@ class StateGame extends BaseState implements State {
 
   String [] licenseLines;
   String [] agreementLines;
-  Lives lives;
+  GameEngine engine;
   int scroll = 0;
   String currentAgreementTxt = "";
 
   public StateGame(){
-    // init lives
-    lives = new Lives();
-    // init background
+    engine = new GameEngine();
     licenseLines = loadStrings("license.txt");
     agreementLines = loadStrings("agreement.txt");
-    
     nextAgreement();
   }
 
@@ -22,8 +19,8 @@ class StateGame extends BaseState implements State {
     drawBackgroundText();
     drawLives();
 
-    lives.draw();
-    if (lives.isDead()){
+    engine.draw();
+    if (engine.isDead()){
         done = true;
     }
 
@@ -55,8 +52,9 @@ class StateGame extends BaseState implements State {
   }
   
   void mousePressed() {
-    nextAgreement();
-    lives.click_ok();
+    if(engine.onClick()) {
+      nextAgreement();
+    }
   }
 
 }

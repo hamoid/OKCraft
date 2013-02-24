@@ -1,11 +1,6 @@
 class StateWait extends BaseState implements State {  
   void draw() {
-    noFill();
-    stroke(random(100), 0, 0);
-    strokeWeight(30);
-    float sz = random(width);
-    ellipse(width/2, height/2, sz, sz);
-    strokeWeight(1);
+    drawEffects();
 
     super.draw();
     
@@ -21,5 +16,13 @@ class StateWait extends BaseState implements State {
     if(currentTime() > 6 || FAST) {
       done = true;
     }
-  }    
+  }  
+  void drawEffects() {
+    noFill();
+    stroke(random(100), 0, 0);
+    strokeWeight(30);
+    float sz = random(width);
+    ellipse(width/2, height/2, sz, sz);
+    strokeWeight(1);
+  }  
 }
